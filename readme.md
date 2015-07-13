@@ -38,11 +38,10 @@ For themes you may need to include [Twitter Bootstrap](http://getbootstrap.com) 
 For some extra controls (e.g. datepicker) you may need to include [angular-ui bootstrap](http://angular-ui.github.io/bootstrap/).
 
 
-## Usage
-####
+
+#### Usage
 ````
  <form editable-form editable-ignore>
-     ...
 ````
 ####
 

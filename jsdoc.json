@@ -1,0 +1,386 @@
+{
+    "namespaces": [
+        {
+            "name": "editable-element",
+            "description": "EditableController class. \rAttached to element with `editable-xxx` directive.",
+            "access": "",
+            "virtual": false,
+            "properties": [
+                {
+                    "name": "e-*",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Attributes defined with `e-*` prefix automatically transfered from original element to\rcontrol.  \rFor example, if you set `<span editable-text=\"user.name\" e-style=\"width: 100px\"`>\rthen input will appear as `<input style=\"width: 100px\">`.  \rSee [demo](#text-customize).",
+                    "type": {
+                        "names": [
+                            "any",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "buttons",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Whether to show ok/cancel buttons. Values: `right|no`.\rIf set to `no` control automatically submitted when value changed.  \rIf control is part of form buttons will never be shown.",
+                    "type": {
+                        "names": [
+                            "string",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "blur",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Action when control losses focus. Values: `cancel|submit|ignore`.\rHas sense only for single editable element.\rOtherwise, if control is part of form - you should set `blur` of form, not of individual element.",
+                    "type": {
+                        "names": [
+                            "string",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "onshow",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called when control is shown.  \rSee [demo](#select-remote).",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "onhide",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called when control is hidden after both save or cancel.",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "oncancel",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called when control is cancelled.",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "onbeforesave",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called during submit before value is saved to model.  \rSee [demo](#onbeforesave).",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "onaftersave",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called during submit after value is saved to model.  \rSee [demo](#onaftersave).",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "editable-form",
+            "description": "EditableForm directive. Should be defined in <form> containing editable controls.  \rIt add some usefull methods to form variable exposed to scope by `name=\"myform\"` attribute.",
+            "access": "",
+            "virtual": false,
+            "functions": [
+                {
+                    "name": "$show()",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Shows form with editable controls.",
+                    "parameters": [],
+                    "examples": []
+                },
+                {
+                    "name": "$activate(name)",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Sets focus on form field specified by `name`.",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "name of field",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                },
+                {
+                    "name": "$hide()",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Hides form with editable controls without saving.",
+                    "parameters": [],
+                    "examples": []
+                },
+                {
+                    "name": "$cancel()",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Triggers `oncancel` event and calls `$hide()`.",
+                    "parameters": [],
+                    "examples": []
+                },
+                {
+                    "name": "$setError(name, msg)",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Shows error message for particular field.",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "description": "name of field",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        },
+                        {
+                            "name": "msg",
+                            "type": "string",
+                            "description": "error message",
+                            "default": "",
+                            "optional": "",
+                            "nullable": ""
+                        }
+                    ],
+                    "examples": []
+                }
+            ],
+            "properties": [
+                {
+                    "name": "$visible",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Form visibility flag.",
+                    "type": {
+                        "names": [
+                            "bool"
+                        ]
+                    }
+                },
+                {
+                    "name": "$waiting",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Form waiting flag. It becomes `true` when form is loading or saving data.",
+                    "type": {
+                        "names": [
+                            "bool"
+                        ]
+                    }
+                },
+                {
+                    "name": "onshow",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called when form is shown.",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "onhide",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called when form hides after both save or cancel.",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "oncancel",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called when form is cancelled.",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "shown",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Whether form initially rendered in shown state.",
+                    "type": {
+                        "names": [
+                            "bool",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "blur",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Action when form losses focus. Values: `cancel|submit|ignore`.\rDefault is `ignore`.",
+                    "type": {
+                        "names": [
+                            "string",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "onbeforesave",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called after all children `onbeforesave` callbacks but before saving form values\rto model.  \rIf at least one children callback returns `non-string` - it will not not be called.  \rSee [editable-form demo](#editable-form) for details.",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                },
+                {
+                    "name": "onaftersave",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Called when form values are saved to model.  \rSee [editable-form demo](#editable-form) for details.",
+                    "type": {
+                        "names": [
+                            "method",
+                            "attribute"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "editable-options",
+            "description": "Default options.",
+            "access": "",
+            "virtual": false,
+            "properties": [
+                {
+                    "name": "theme",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Theme. Possible values `bs3`, `bs2`, `default`.",
+                    "type": {
+                        "names": [
+                            "string"
+                        ]
+                    }
+                },
+                {
+                    "name": "icon set",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Icon Set. Possible values `font-awesome`, `default`.",
+                    "type": {
+                        "names": [
+                            "string"
+                        ]
+                    }
+                },
+                {
+                    "name": "buttons",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Whether to show buttons for single editalbe element.  \rPossible values `right` (default), `no`.",
+                    "type": {
+                        "names": [
+                            "string"
+                        ]
+                    }
+                },
+                {
+                    "name": "blurElem",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Default value for `blur` attribute of single editable element.  \rCan be `cancel|submit|ignore`.",
+                    "type": {
+                        "names": [
+                            "string"
+                        ]
+                    }
+                },
+                {
+                    "name": "blurForm",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Default value for `blur` attribute of editable form.  \rCan be `cancel|submit|ignore`.",
+                    "type": {
+                        "names": [
+                            "string"
+                        ]
+                    }
+                },
+                {
+                    "name": "activate",
+                    "access": "",
+                    "virtual": false,
+                    "description": "How input elements get activated. Possible values: `focus|select|none`.",
+                    "type": {
+                        "names": [
+                            "string"
+                        ]
+                    }
+                },
+                {
+                    "name": "isDisabled",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Whether to disable x-editable. Can be overloaded on each element.",
+                    "type": {
+                        "names": [
+                            "boolean"
+                        ]
+                    }
+                },
+                {
+                    "name": "activationEvent",
+                    "access": "",
+                    "virtual": false,
+                    "description": "Event, on which the edit mode gets activated. \rCan be any event.",
+                    "type": {
+                        "names": [
+                            "string"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

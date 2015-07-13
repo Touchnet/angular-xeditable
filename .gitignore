@@ -3,3 +3,4 @@
 dev.html
 jsdoc.json
 /.idea
+*.suo

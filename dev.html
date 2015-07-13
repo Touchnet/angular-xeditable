@@ -61,7 +61,7 @@
             <li><a href="/test/e2e/dev-test.html">dev-test</a></li>
             <li><a href="/test/e2e/docs-test.html">prod-test</a></li>
           </ul>
-          <form class="navbar-form navbar-right"><a href="zip/angular-xeditable-0.1.9.zip" style="font-weight:bold" class="btn btn-primary"><span style="margin-right:10px" class="glyphicon glyphicon-save"></span>Download 0.1.9 ~ 27kb</a></form>
+          <form class="navbar-form navbar-right"><a href="zip/angular-xeditable-0.1.10.zip" style="font-weight:bold" class="btn btn-primary"><span style="margin-right:10px" class="glyphicon glyphicon-save"></span>Download 0.1.10 ~ 27kb</a></form>
         </div>
       </div>
     </nav>
@@ -193,7 +193,7 @@ to use power of angular and support complex forms / editable grids.</p>
 
               <pre class="prettyprint">&lt;link href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</pre>
             </li>
-            <li> <span>Install angular-xeditable via </span><a href="http://bower.io" target="_blank">bower</a><span> or  </span><a href="zip/angular-xeditable-0.1.9.zip">download latest zip    </a>
+            <li> <span>Install angular-xeditable via </span><a href="http://bower.io" target="_blank">bower</a><span> or  </span><a href="zip/angular-xeditable-0.1.10.zip">download latest zip    </a>
               <pre class="prettyprint">bower install angular-xeditable </pre>
             </li>
             <li>Include angular-xeditable into your project
@@ -2616,6 +2616,7 @@ $scope.$watch("user", function(v) { $scope.$parent.debug["dev-text"]=v; }); });<
                       <!-- watch change of user to update rootScope for debugging-->
                       <h3>demo</h3>
                       <div class="well line-example"><div ng-controller="DevFormCtrl">
+    <h1>Ecco</h1>
   <div class="check-disabled">
     <form editable-form name="editableForm" onaftersave="saveUser()">
       <div>
@@ -2768,6 +2769,7 @@ $scope.$watch("user", function(v) { $scope.$parent.debug["dev-text"]=v; }); });<
 $scope.$watch("user", function(v) { $scope.$parent.debug["dev-form"]=v; }); });</script>
                       <h3>html</h3>
                       <pre class="prettyprint ng-non-bindable">&lt;div ng-controller=&quot;DevFormCtrl&quot;&gt;
+    &lt;h1&gt;Ecco&lt;/h1&gt;
   &lt;div class=&quot;check-disabled&quot;&gt;
     &lt;form editable-form name=&quot;editableForm&quot; onaftersave=&quot;saveUser()&quot;&gt;
       &lt;div&gt;

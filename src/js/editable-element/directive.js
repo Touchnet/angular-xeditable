@@ -33,9 +33,10 @@ function ($parse, $compile, editableThemes, $rootScope, $document, editableContr
                 // By default consider single element without any linked form.ß
                 var hasForm = false;
 
-                // element wrapped by form
+               
                 if ($(elem).closest("form").attr("editable-ignore")) {
 
+                    // element wrapped by form
                     if (ctrl[1]) {
                         eFormCtrl = ctrl[1];
                         hasForm = true;

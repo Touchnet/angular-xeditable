@@ -2,7 +2,7 @@ Angular-xeditable changelog
 =============================
 
 
-Version 0.1.10 Jun 12, 2015
+Version 0.1.11 Jun 12, 2015
 ----------------------------
 [enh #258] added attribute 'editable-ignore' in for element (mcianc)
 

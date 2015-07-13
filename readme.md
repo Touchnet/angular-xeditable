@@ -2,9 +2,16 @@
 Edit in place for AngularJS
 
 This fork born from necessity to let work any xeditable item inside form element.
-Personally i need form around 
+This fiddler example show 
+<ul>
+    <li><a href="https://jsfiddle.net/mcianc/181wLg4b/">Vitalets/angular-xeditable version Example</a><br/><br/></li>
+    <li><a href="https://jsfiddle.net/mcianc/181wLg4b/"><b>Touchnet</b>/angular-xeditable version Example: here xeditable item work with click and edit</a></li>
+</ul>
 
-added attribute 'editable-ignore' to form element.
+
+
+
+If you
 
 ## Overview
 **Angular-xeditable** is a bundle of [AngularJS](http://angularjs.org) directives that allows you to create
@@ -33,14 +40,6 @@ Reguire JQuery.
 Basically it does not depend on any libraries except [AngularJS](http://angularjs.org) itself.    
 For themes you may need to include [Twitter Bootstrap](http://getbootstrap.com) CSS.  
 For some extra controls (e.g. datepicker) you may need to include [angular-ui bootstrap](http://angular-ui.github.io/bootstrap/).
-
-
-## Usage
-####
- <form editable-form editable-ignore>
-     ...
-####
-
 
 ## License
 MIT

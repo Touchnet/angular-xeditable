@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40302.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "angular-xeditable(1)", "http://localhost:2478", "{0F54587C-4B2E-42B8-A2D4-4DF504363A48}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "angular-xeditable", "http://localhost:2478", "{0F54587C-4B2E-42B8-A2D4-4DF504363A48}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"

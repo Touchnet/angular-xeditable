@@ -1,7 +1,7 @@
 {
   "name": "angular-xeditable",
   "description": "Edit-in-place for angular.js",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "homepage": "https://github.com/Touchnet/angular-xeditable",
   "author": {
     "name": "Marco Cianciaruso",

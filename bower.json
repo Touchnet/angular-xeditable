@@ -1,10 +1,10 @@
 {
   "name": "angular-xeditable",
-  "version": "0.1.9",
-  "description": "Edit in place for AngularJS",
-  "author": "https://github.com/vitalets",
+  "version": "0.1.10",
+  "description": "Edit in place for AngularJS- Touchnet version",
+  "author": "https://github.com/mcianc",
   "license": "MIT",
-  "homepage": "http://vitalets.github.io/angular-xeditable",
+  "homepage": "https://github.com/Touchnet/angular-xeditable",
   "main": [
     "dist/css/xeditable.css",
     "dist/js/xeditable.js"

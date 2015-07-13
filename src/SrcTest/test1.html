@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="testApp">
+<head>
+    <title></title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/xeditable.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+
+    <script src="../js/module.js"></script>
+    <script src="../js/helpers.js"></script>
+    <script src="../js/icons.js"></script>
+    <script src="../js/themes.js"></script>
+
+    <script src="../js/directives/bsdate.js"></script>
+    <script src="../js/directives/bstime.js"></script>
+    <script src="../js/directives/checkbox.js"></script>
+    <script src="../js/directives/checklist.js"></script>
+    <script src="../js/directives/combodate.js"></script>
+    <script src="../js/directives/input.js"></script>
+    <script src="../js/directives/radiolist.js"></script>
+    <script src="../js/directives/select.js"></script>
+    <script src="../js/directives/textarea.js"></script>
+
+    <script src="../js/editable-element/directive.js"></script>
+    <script src="../js/editable-element/controller.js"></script>
+
+    <script src="../js/editable-form/directive.js"></script>
+    <script src="../js/editable-form/controller.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module("testApp", ["xeditable"]);
+
+        app.controller('Ctrl', function ($scope) {
+            $scope.user = {
+                name: 'awesome user'
+            };
+        });
+
+    </script>
+</head>
+<body>
+
+    <div ng-controller="Ctrl">
+        <form editable-form editable-ignore>
+            <a href="#" editable-text="user.name">{{ user.name || 'empty' }}</a>
+        </form>
+    </div>
+
+</body>
+</html>

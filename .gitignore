@@ -3,3 +3,5 @@
 dev.html
 jsdoc.json
 /.idea
+*.suo
+angular-xeditable.v12.suo

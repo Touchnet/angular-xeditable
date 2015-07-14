@@ -1,5 +1,5 @@
 /*!
-angular-xeditable - 0.1.10
+angular-xeditable - 0.1.11
 Edit-in-place for angular.js
 Build date: 2015-07-13 
 */
@@ -854,9 +854,10 @@ function ($parse, $compile, editableThemes, $rootScope, $document, editableContr
                 // By default consider single element without any linked form.ß
                 var hasForm = false;
 
-                // element wrapped by form
-                if ($(elem).closest("form").attr("editable-ignore")) {
+               
+                if ( $(elem).closest("form").length > 0 && $(elem).closest("form").is("[editable-ignore]") ) {
 
+                    // element wrapped by form
                     if (ctrl[1]) {
                         eFormCtrl = ctrl[1];
                         hasForm = true;

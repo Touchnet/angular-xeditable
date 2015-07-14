@@ -1,26 +1,30 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angular-xeditable :: Edit in place for AngularJS</title>
+    <title>Dev</title>
     <!--theme: Bootstrap 3, Bootstrap 2, default-->
-    <link href="libs/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link ng-repeat="c in css" ng-href="{{c}}" rel="stylesheet" media="screen">
+    <!--link(href="libs/bootstrap/3.0.0/css/bootstrap.css", rel="stylesheet", media="screen")-->
+    <!--link(href="libs/bootstrap/2.3.2/css/bootstrap.css", rel="stylesheet", media="screen")-->
+    <!--link(href="libs/bootstrap/3.0.0/css/bootstrap-responsive.css", rel="stylesheet", media="screen")-->
     <!--xeditable css-->
-    <link href="dist/css/xeditable.css" rel="stylesheet" media="screen">
+    <link href="src/css/xeditable.css" rel="stylesheet" media="screen">
     <!--docs css-->
     <link href="docs/css/docs.css" rel="stylesheet" media="screen">
+    <!--jquery (needed for bootstrap)? for dev include before angular!-->
+    <script src="libs/jquery/jquery-2.0.3.js"></script>
+    <!--script(src="libs/jquery/jquery-1.10.2.js")-->
     <!--angular-->
+    <!--script(src='libs/angular/1.0.8/angular.js')-->
+    <!--script(src='libs/angular/1.0.8/angular-mocks.js')-->
     <script src="libs/angular/1.2.7/angular.js"></script>
     <script src="libs/angular/1.2.7/angular-mocks.js"></script>
-    <!--jquery (needed for bootstrap)-->
-    <script src="libs/jquery/jquery-1.10.2.min.js"></script>
     <!--bootstrap-->
     <script src="libs/bootstrap/3.0.0/js/bootstrap.js"></script>
     <!--angular-ui-bootstrap-->
     <script src="libs/angular-ui/bootstrap/ui-bootstrap-tpls-0.6.0.min.js"></script>
-    <!--moment-->
-    <script src="libs/moment.min.2.5.0.js"></script>
     <!--google-code-prettify-->
     <script src="libs/google-code-prettify/run_prettify.js"></script>
     <!--checklist-model-->
@@ -28,57 +32,36 @@
     <!--app-->
     <script src="docs/js/app.js"></script>
     <!--xeditable-->
-    <script src="dist/js/xeditable.min.js"></script>
+    <script src="src/js/module.js"></script>
+    <script src="src/js/helpers.js"></script>
+    <script src="src/js/themes.js"></script>
+    <script src="src/js/editable-form/controller.js"></script>
+    <script src="src/js/editable-form/directive.js"></script>
+    <script src="src/js/editable-element/controller.js"></script>
+    <script src="src/js/editable-element/directive.js"></script>
+    <script src="src/js/directives/input.js"></script>
+    <script src="src/js/directives/select.js"></script>
+    <script src="src/js/directives/textarea.js"></script>
+    <script src="src/js/directives/checkbox.js"></script>
+    <script src="src/js/directives/bsdate.js"></script>
+    <script src="src/js/directives/bstime.js"></script>
+    <script src="src/js/directives/radiolist.js"></script>
+    <script src="src/js/directives/checklist.js"></script>
   </head>
   <body data-spy="scroll" data-target=".sidebar">
     <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Angular-xeditable </a>
+          <button type="button" data-toggle="collapse" data-target=".navbar-ex1-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Angular-xeditable (dev)</a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="https://github.com/vitalets/angular-xeditable">Github</a></li>
+            <li><a href="/test/e2e/dev-test.html">dev-test</a></li>
+            <li><a href="/test/e2e/docs-test.html">prod-test</a></li>
           </ul>
           <form class="navbar-form navbar-right"><a href="zip/angular-xeditable-0.1.11.zip" style="font-weight:bold" class="btn btn-primary"><span style="margin-right:10px" class="glyphicon glyphicon-save"></span>Download 0.1.11 ~ 27kb</a></form>
-          <div style="padding-top: 13px">
-<!-- google+ -->
-<div id="socials" style="text-align: center">
-<div style="display: inline-block" class="g-plusone" data-size="medium" data-href="http://vitalets.github.io/angular-xeditable"></div>
-<script type="text/javascript">
-  (function() {
-    if (!isProd()) return;
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-
-
-<!-- facebook -->
-<div id="fb-root" style="display: inline-block"></div>
-<script>
-(function(d, s, id) {
-  if (!isProd()) return;
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=558710054143871";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-<div style="vertical-align:top;zoom:1;*display:inline;display: inline-block; text-align:left; margin: 1px 30px 0 0" class="fb-like" data-href="http://vitalets.github.io/angular-xeditable" data-send="false" data-layout="button_count" data-width1="450" data-show-faces="false"></div>
-
-
-<!-- twitter -->
-<a style="vertical-align:top" href="https://twitter.com/share" class="twitter-share-button" data-url="http://vitalets.github.io/angular-xeditable" data-via="xeditable">Tweet</a>
-<script>!function(d,s,id){
-  if (!isProd()) return;
-  var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  </script>            
-</div>
-          </div>
         </div>
       </div>
     </nav>
@@ -150,6 +133,13 @@
                 <ul class="nav">
                   <li><a href="#ref-element">Editable element</a></li>
                   <li><a href="#ref-form">Editable form</a></li>
+                </ul>
+              </li>
+              <li><a href="#dev-text">Dev Tests</a>
+                <ul class="nav">
+                  <li><a href="#dev-text">dev-text</a></li>
+                  <li><a href="#dev-form">dev-form</a></li>
+                  <li><a href="#dev-select">dev-select</a></li>
                 </ul>
               </li>
             </ul>
@@ -2572,6 +2562,423 @@ to model.<br>If at least one children callback returns <code>non-string</code> -
                         </tr>
                       </tbody>
                     </table>
+                    <section id="dev-text">
+                      <h1>dev-text</h1>
+                      <!-- watch change of user to update rootScope for debugging-->
+                      <h3>demo</h3>
+                      <div class="well line-example"><div ng-controller="DevText">
+  <a href="#" id="e-attrs" editable-text="user.name" e-style="color: green" e:required e_autocomplete="off" e-data-var="var" x-e-placeholder="Enter name" data-e-ng-bind="test" e:ng:submit="test()">
+    {{ (user.name || 'empty') | uppercase }}
+  </a>
+  <a href="#" class="submit" editable-text="user.name" blur="submit">
+    {{ user.name }}
+  </a>
+  <a href="#" class="cancel" editable-text="user.name" blur="cancel">
+    {{ user.name }}
+  </a>
+  <a href="#" class="ignore" editable-text="user.name" blur="ignore">
+    {{ user.name }}
+  </a>
+</div></div>
+                      <pre>{{ debug["dev-text"] | json }}</pre>
+                      <p><p>dev-test</p>
+</p>
+                      <!--script(src=dir+'/controller.js')-->
+                      <script>app.controller('DevText', function($scope) {
+  $scope.user = {
+    name: 'awesome user'
+  };  
+$scope.$watch("user", function(v) { $scope.$parent.debug["dev-text"]=v; }); });</script>
+                      <h3>html</h3>
+                      <pre class="prettyprint ng-non-bindable">&lt;div ng-controller=&quot;DevText&quot;&gt;
+  &lt;a href=&quot;#&quot; id=&quot;e-attrs&quot; editable-text=&quot;user.name&quot; e-style=&quot;color: green&quot; e:required e_autocomplete=&quot;off&quot; e-data-var=&quot;var&quot; x-e-placeholder=&quot;Enter name&quot; data-e-ng-bind=&quot;test&quot; e:ng:submit=&quot;test()&quot;&gt;
+    {{ (user.name || 'empty') | uppercase }}
+  &lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;submit&quot; editable-text=&quot;user.name&quot; blur=&quot;submit&quot;&gt;
+    {{ user.name }}
+  &lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;cancel&quot; editable-text=&quot;user.name&quot; blur=&quot;cancel&quot;&gt;
+    {{ user.name }}
+  &lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;ignore&quot; editable-text=&quot;user.name&quot; blur=&quot;ignore&quot;&gt;
+    {{ user.name }}
+  &lt;/a&gt;
+&lt;/div&gt;</pre>
+                      <h3>controller.js</h3>
+                      <pre class="prettyprint">app.controller('DevText', function($scope) {
+  $scope.user = {
+    name: 'awesome user'
+  };  
+});</pre>
+                    </section>
+                    <section id="dev-form">
+                      <h1>dev-form</h1>
+                      <!-- watch change of user to update rootScope for debugging-->
+                      <h3>demo</h3>
+                      <div class="well line-example"><div ng-controller="DevFormCtrl">
+    <h1>Ecco</h1>
+  <div class="check-disabled">
+    <form editable-form name="editableForm" onaftersave="saveUser()">
+      <div>
+        <!-- editable username (text with validation) -->
+        <span class="title">User name: </span>
+        <span editable-text="user.name" e-ng-disabled="true" e-name="name" onbeforesave="checkName($data)" e-required>{{ user.name || 'empty' }}</span>
+      </div> 
+
+      <div>
+        <!-- editable status (select-local) -->
+        <span class="title">Status: </span>
+        <span editable-select="user.status" e-disabled e-name="status" e-ng-options="s.value as s.text for s in statuses">
+          {{ (statuses | filter:{value: user.status})[0].text || 'Not set' }}
+        </span>
+      </div>  
+
+      <div>
+        <!-- editable group (select-remote) -->
+        <span class="title">Group: </span>
+        <span editable-select="user.group" e-name="group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+          {{ showGroup() }}
+        </span>
+      </div>
+
+      <div class="buttons">
+        <!-- button to show form -->
+        <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+          Edit
+        </button>
+        <!-- buttons to submit / cancel form -->
+        <span ng-show="editableForm.$visible">
+          <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+            Save
+          </button>
+          <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+            Cancel
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>  
+
+  <div class="check-blur-cancel">
+    <form editable-form name="editableForm1" blur="cancel">
+      <div>
+        <!-- editable username (text with validation) -->
+        <span class="title">User name: </span>
+        <span editable-text="user.name" e-name="name">{{ user.name || 'empty' }}</span>
+      </div> 
+
+      <div class="buttons">
+        <!-- button to show form -->
+        <button type="button" class="btn btn-default" ng-click="editableForm1.$show()" ng-show="!editableForm1.$visible">
+          Edit
+        </button>
+        <!-- buttons to submit / cancel form -->
+        <span ng-show="editableForm1.$visible">
+          <button type="submit" class="btn btn-primary" ng-disabled="editableForm1.$waiting">
+            Save
+          </button>
+          <button type="button" class="btn btn-default" ng-disabled="editableForm1.$waiting" ng-click="editableForm1.$cancel()">
+            Cancel
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
+
+  <div class="check-blur-submit">
+    <form editable-form name="editableForm2" blur="submit">
+      <div>
+        <!-- editable username (text with validation) -->
+        <span class="title">User name: </span>
+        <span editable-text="user.name" e-name="name">{{ user.name || 'empty' }}</span>
+      </div> 
+
+      <div class="buttons">
+        <!-- button to show form -->
+        <button type="button" class="btn btn-default" ng-click="editableForm2.$show()" ng-show="!editableForm2.$visible">
+          Edit
+        </button>
+        <!-- buttons to submit / cancel form -->
+        <span ng-show="editableForm2.$visible">
+          <button type="submit" class="btn btn-primary" ng-disabled="editableForm2.$waiting">
+            Save
+          </button>
+          <button type="button" class="btn btn-default" ng-disabled="editableForm2.$waiting" ng-click="editableForm2.$cancel()">
+            Cancel
+          </button>
+        </span>
+      </div>
+    </form>
+  </div>
+
+</div></div>
+                      <pre>{{ debug["dev-form"] | json }}</pre>
+                      <p><p>dev</p>
+</p>
+                      <!--script(src=dir+'/controller.js')-->
+                      <script>app.controller('DevFormCtrl', function($scope, $filter, $http) {
+  $scope.user = {
+    id: 1,
+    name: 'awesome user',
+    status: 2,
+    group: 4,
+    groupName: 'admin'
+  }; 
+
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+  $scope.groups = [];
+  $scope.loadGroups = function() {
+    return $scope.groups.length ? null : $http.get('/groups').success(function(data) {
+      $scope.groups = data;
+    });
+  };
+
+  $scope.showGroup = function() {
+    if($scope.groups.length) {
+      var selected = $filter('filter')($scope.groups, {id: $scope.user.group});
+      return selected.length ? selected[0].text : 'Not set';
+    } else {
+      return $scope.user.groupName;
+    }
+  };
+
+  $scope.checkName = function(data) {
+    if (data !== 'awesome' && data !== 'error') {
+      return "Username should be `awesome` or `error`";
+    }
+  };
+
+  $scope.saveUser = function() {
+    // $scope.user already updated!
+    return $http.post('/saveUser', $scope.user).error(function(err) {
+      if(err.field && err.msg) {
+        // err like {field: "name", msg: "Server-side error for this username!"} 
+        $scope.editableForm.$setError(err.field, err.msg);
+      } else { 
+        // unknown error
+        $scope.editableForm.$setError('name', 'Unknown error!');
+      }
+    });
+  };
+$scope.$watch("user", function(v) { $scope.$parent.debug["dev-form"]=v; }); });</script>
+                      <h3>html</h3>
+                      <pre class="prettyprint ng-non-bindable">&lt;div ng-controller=&quot;DevFormCtrl&quot;&gt;
+    &lt;h1&gt;Ecco&lt;/h1&gt;
+  &lt;div class=&quot;check-disabled&quot;&gt;
+    &lt;form editable-form name=&quot;editableForm&quot; onaftersave=&quot;saveUser()&quot;&gt;
+      &lt;div&gt;
+        &lt;!-- editable username (text with validation) --&gt;
+        &lt;span class=&quot;title&quot;&gt;User name: &lt;/span&gt;
+        &lt;span editable-text=&quot;user.name&quot; e-ng-disabled=&quot;true&quot; e-name=&quot;name&quot; onbeforesave=&quot;checkName($data)&quot; e-required&gt;{{ user.name || 'empty' }}&lt;/span&gt;
+      &lt;/div&gt; 
+
+      &lt;div&gt;
+        &lt;!-- editable status (select-local) --&gt;
+        &lt;span class=&quot;title&quot;&gt;Status: &lt;/span&gt;
+        &lt;span editable-select=&quot;user.status&quot; e-disabled e-name=&quot;status&quot; e-ng-options=&quot;s.value as s.text for s in statuses&quot;&gt;
+          {{ (statuses | filter:{value: user.status})[0].text || 'Not set' }}
+        &lt;/span&gt;
+      &lt;/div&gt;  
+
+      &lt;div&gt;
+        &lt;!-- editable group (select-remote) --&gt;
+        &lt;span class=&quot;title&quot;&gt;Group: &lt;/span&gt;
+        &lt;span editable-select=&quot;user.group&quot; e-name=&quot;group&quot; onshow=&quot;loadGroups()&quot; e-ng-options=&quot;g.id as g.text for g in groups&quot;&gt;
+          {{ showGroup() }}
+        &lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;buttons&quot;&gt;
+        &lt;!-- button to show form --&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;editableForm.$show()&quot; ng-show=&quot;!editableForm.$visible&quot;&gt;
+          Edit
+        &lt;/button&gt;
+        &lt;!-- buttons to submit / cancel form --&gt;
+        &lt;span ng-show=&quot;editableForm.$visible&quot;&gt;
+          &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; ng-disabled=&quot;editableForm.$waiting&quot;&gt;
+            Save
+          &lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-disabled=&quot;editableForm.$waiting&quot; ng-click=&quot;editableForm.$cancel()&quot;&gt;
+            Cancel
+          &lt;/button&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;  
+
+  &lt;div class=&quot;check-blur-cancel&quot;&gt;
+    &lt;form editable-form name=&quot;editableForm1&quot; blur=&quot;cancel&quot;&gt;
+      &lt;div&gt;
+        &lt;!-- editable username (text with validation) --&gt;
+        &lt;span class=&quot;title&quot;&gt;User name: &lt;/span&gt;
+        &lt;span editable-text=&quot;user.name&quot; e-name=&quot;name&quot;&gt;{{ user.name || 'empty' }}&lt;/span&gt;
+      &lt;/div&gt; 
+
+      &lt;div class=&quot;buttons&quot;&gt;
+        &lt;!-- button to show form --&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;editableForm1.$show()&quot; ng-show=&quot;!editableForm1.$visible&quot;&gt;
+          Edit
+        &lt;/button&gt;
+        &lt;!-- buttons to submit / cancel form --&gt;
+        &lt;span ng-show=&quot;editableForm1.$visible&quot;&gt;
+          &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; ng-disabled=&quot;editableForm1.$waiting&quot;&gt;
+            Save
+          &lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-disabled=&quot;editableForm1.$waiting&quot; ng-click=&quot;editableForm1.$cancel()&quot;&gt;
+            Cancel
+          &lt;/button&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;check-blur-submit&quot;&gt;
+    &lt;form editable-form name=&quot;editableForm2&quot; blur=&quot;submit&quot;&gt;
+      &lt;div&gt;
+        &lt;!-- editable username (text with validation) --&gt;
+        &lt;span class=&quot;title&quot;&gt;User name: &lt;/span&gt;
+        &lt;span editable-text=&quot;user.name&quot; e-name=&quot;name&quot;&gt;{{ user.name || 'empty' }}&lt;/span&gt;
+      &lt;/div&gt; 
+
+      &lt;div class=&quot;buttons&quot;&gt;
+        &lt;!-- button to show form --&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;editableForm2.$show()&quot; ng-show=&quot;!editableForm2.$visible&quot;&gt;
+          Edit
+        &lt;/button&gt;
+        &lt;!-- buttons to submit / cancel form --&gt;
+        &lt;span ng-show=&quot;editableForm2.$visible&quot;&gt;
+          &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; ng-disabled=&quot;editableForm2.$waiting&quot;&gt;
+            Save
+          &lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-disabled=&quot;editableForm2.$waiting&quot; ng-click=&quot;editableForm2.$cancel()&quot;&gt;
+            Cancel
+          &lt;/button&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+                      <h3>controller.js</h3>
+                      <pre class="prettyprint">app.controller('DevFormCtrl', function($scope, $filter, $http) {
+  $scope.user = {
+    id: 1,
+    name: 'awesome user',
+    status: 2,
+    group: 4,
+    groupName: 'admin'
+  }; 
+
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+  $scope.groups = [];
+  $scope.loadGroups = function() {
+    return $scope.groups.length ? null : $http.get('/groups').success(function(data) {
+      $scope.groups = data;
+    });
+  };
+
+  $scope.showGroup = function() {
+    if($scope.groups.length) {
+      var selected = $filter('filter')($scope.groups, {id: $scope.user.group});
+      return selected.length ? selected[0].text : 'Not set';
+    } else {
+      return $scope.user.groupName;
+    }
+  };
+
+  $scope.checkName = function(data) {
+    if (data !== 'awesome' &amp;&amp; data !== 'error') {
+      return &quot;Username should be `awesome` or `error`&quot;;
+    }
+  };
+
+  $scope.saveUser = function() {
+    // $scope.user already updated!
+    return $http.post('/saveUser', $scope.user).error(function(err) {
+      if(err.field &amp;&amp; err.msg) {
+        // err like {field: &quot;name&quot;, msg: &quot;Server-side error for this username!&quot;} 
+        $scope.editableForm.$setError(err.field, err.msg);
+      } else { 
+        // unknown error
+        $scope.editableForm.$setError('name', 'Unknown error!');
+      }
+    });
+  };
+});</pre>
+                    </section>
+                    <section id="dev-select">
+                      <h1>dev-select</h1>
+                      <!-- watch change of user to update rootScope for debugging-->
+                      <h3>demo</h3>
+                      <div class="well line-example"><div ng-controller="DevSelectCtrl">
+  <a href="#" editable-select="user.status" e-multiple e-ng-options="s.text for s in statuses">
+    {{ showStatus() }}
+  </a>
+</div></div>
+                      <pre>{{ debug["dev-select"] | json }}</pre>
+                      <p><p>dev</p>
+</p>
+                      <!--script(src=dir+'/controller.js')-->
+                      <script>app.controller('DevSelectCtrl', function($scope, $filter) {
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+  $scope.user = {
+    status: [$scope.statuses[1], $scope.statuses[3]]
+  }; 
+
+  $scope.showStatus = function() {
+    var texts = [];
+    angular.forEach($scope.user.status, function(s) { 
+      texts.push(s.text);
+    });    
+    return texts.join(', ') || 'Not set';
+  };
+$scope.$watch("user", function(v) { $scope.$parent.debug["dev-select"]=v; }); });</script>
+                      <h3>html</h3>
+                      <pre class="prettyprint ng-non-bindable">&lt;div ng-controller=&quot;DevSelectCtrl&quot;&gt;
+  &lt;a href=&quot;#&quot; editable-select=&quot;user.status&quot; e-multiple e-ng-options=&quot;s.text for s in statuses&quot;&gt;
+    {{ showStatus() }}
+  &lt;/a&gt;
+&lt;/div&gt;</pre>
+                      <h3>controller.js</h3>
+                      <pre class="prettyprint">app.controller('DevSelectCtrl', function($scope, $filter) {
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+  $scope.user = {
+    status: [$scope.statuses[1], $scope.statuses[3]]
+  }; 
+
+  $scope.showStatus = function() {
+    var texts = [];
+    angular.forEach($scope.user.status, function(s) { 
+      texts.push(s.text);
+    });    
+    return texts.join(', ') || 'Not set';
+  };
+});</pre>
+                    </section>
         </div>
       </div>
     </div>
@@ -2579,31 +2986,6 @@ to model.<br>If at least one children callback returns <code>non-string</code> -
       <hr><p>If you have question or idea please feel free to <a href="https://github.com/vitalets/angular-xeditable/issues">open issue on github</a>.</p>
 
       <p>&copy; Vitaliy Potapov 2013. Released under the MIT license.</p>
-    </footer><!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function (d, w, c) {
-    if (!isProd()) return;
-
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter22341505 = new Ya.Metrika({id:22341505,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/22341505" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    </footer>
   </body>
 </html>

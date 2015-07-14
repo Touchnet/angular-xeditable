@@ -1,7 +1,7 @@
 /*!
 angular-xeditable - 0.1.11
 Edit-in-place for angular.js
-Build date: 2015-07-13 
+Build date: 2015-07-14 
 */
 /**
  * Angular-xeditable module 
@@ -855,7 +855,7 @@ function ($parse, $compile, editableThemes, $rootScope, $document, editableContr
                 var hasForm = false;
 
                
-                if ( $(elem).closest("form").length > 0 && $(elem).closest("form").is("[editable-ignore]") ) {
+                if ( $(elem).closest("form").length > 0 && !$(elem).closest("form").is("[editable-ignore]") ) {
 
                     // element wrapped by form
                     if (ctrl[1]) {

@@ -34,7 +34,7 @@ function ($parse, $compile, editableThemes, $rootScope, $document, editableContr
                 var hasForm = false;
 
                
-                if ( $(elem).closest("form").length > 0 && $(elem).closest("form").is("[editable-ignore]") ) {
+                if ( $(elem).closest("form").length > 0 && !$(elem).closest("form").is("[editable-ignore]") ) {
 
                     // element wrapped by form
                     if (ctrl[1]) {

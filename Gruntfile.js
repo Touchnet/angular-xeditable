@@ -1,3 +1,4 @@
+/// <vs AfterBuild='build' />
 module.exports = function(grunt) {
   var fs = require('fs');
   var extend = require('util')._extend;

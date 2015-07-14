@@ -23,7 +23,9 @@
     "Gruntfile.js",
     "index.html",
     "jsdoc.conf.json",
-    "package.json"
+    "package.json",
+    "*.sln",
+    "*.suo"
   ],
   "dependencies": {
     "angular": "~1.x"
